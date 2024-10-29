@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-blue-500">
+    <header>
+        <h2 class="text-3xl text-center text-white p-3">Magic Hunting Phone</h2>
+    </header>
+    <main class="container mx-auto mt-8">
+        <!-- search field -->
+        <section class="mb-7 p-4 bg-gray-100">
+            <input id="search-field" type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
+
+            <button onclick="handleSearch()" class="btn btn-accent">Search</button>
+
+        </section>
+        <!-- mobile card -->
+        <section>
+            <div id="loading-spinner" class="text-center my-28 hidden">
+                <span class="loading loading-spinner loading-lg"></span>
+            </div>
+            <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+
+            </div>
+            <!-- Show all Mobile Card -->
+            <div id="show-allCard" class="text-center mt-16 py-16 hidden">
+                <button onclick="handleShowAll()" class="btn btn-accent">Show all</button>
+            </div>
+        </section>
+        <!-- Mobile Details Modal -->
+        <section>
+            <!-- Open the modal using ID.showModal() method -->
+            <!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
+            <dialog id="my_modal_1" class="modal">
+                <div class="modal-box">
+                    <h3 id="show-details-phone-name" class="text-lg font-bold"></h3>
+                    <div id="show-details-container" class="mt-6 mb-6">
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+
+                            <button class="btn">Close</button>
+                        </form>
+                    </div>
+                </div>
+            </dialog>
+        </section>
+    </main>
+    <script src="./js/phone.js"></script>
+    <script src="./tailwind.config.js"></script>
+</body>
+
+</html>
